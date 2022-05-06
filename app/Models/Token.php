@@ -17,6 +17,11 @@ class Token extends Model
         return DB::select("SELECT * FROM {$this->table} WHERE jeton = ?", [$id]);
     }
 
+    public function getAll()
+    {
+        return DB::select("select * from {$this->table}");
+    }
+
     public function deleteToken($id)
     {
         DB::delete("DELETE FROM {$this->table} WHERE jeton = ?", [$id]);
